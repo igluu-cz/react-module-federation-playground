@@ -1,5 +1,6 @@
 const { ModuleFederationPlugin } = require("webpack").container;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const path = require("path");
 module.exports = {
   entry: "./index.js",
@@ -37,6 +38,7 @@ module.exports = {
         exclude: /node_modules/,
         options: {
           presets: ["@babel/preset-react"],
+          plugins: [require.resolve("react-refresh/babel")],
         },
       },
     ],
@@ -63,6 +65,9 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+    }),
+    new ReactRefreshWebpackPlugin({
+      exclude: [/node_modules/, /bootstrap\.js$/],
     }),
   ],
 };

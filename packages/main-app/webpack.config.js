@@ -52,8 +52,7 @@ module.exports = {
       remotes: {
         "component-app": "component_app@http://localhost:3001/remoteEntry.js",
         // I add files to our S3 manually to check if it's working
-        "payments-app":
-          "payments_app@https://test-mf-assets.s3.eu-central-1.amazonaws.com/dist/remoteEntry.js",
+        "payments-app": "payments_app@http://localhost:3003/remoteEntry.js",
       },
       shared: {
         "react-router-dom": {

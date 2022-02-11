@@ -1,17 +1,17 @@
-import Button from 'component-app/Button';
-import Dialog from 'component-app/Dialog';
-import ToolTip from 'component-app/ToolTip';
-import React, { useState } from 'react';
+import Button from "component-app/Button";
+import Dialog from "component-app/Dialog";
+import ToolTip from "component-app/ToolTip";
+import React, { useState } from "react";
 
 export default function Home() {
   const [dialogVisible, setDialogVisible] = useState(false);
 
-  const handleClick = ev => {
+  const handleClick = (ev) => {
     console.log(ev);
-    setDialogVisible(prev => !prev);
+    setDialogVisible((prev) => !prev);
   };
 
-  const handleSwitchVisible = visible => {
+  const handleSwitchVisible = (visible) => {
     setDialogVisible(visible);
   };
 
@@ -19,10 +19,18 @@ export default function Home() {
     <div>
       <h1>Open Dev Tool And Focus On Network,checkout resources details</h1>
       <p>
-        react、react-dom js files hosted on <strong>lib-app</strong>
+        react、react-dom js files are shared between application. So it should
+        be loaded only once.
       </p>
       <p>
         components hosted on <strong>component-app</strong>
+      </p>
+      <p>
+        payments page is hosted on <strong>payments-app</strong>
+      </p>
+      <p>
+        You could make changes in applications and it should be properly
+        propagated to the host
       </p>
       <h4>Buttons:</h4>
       <Button type="primary" />
